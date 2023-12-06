@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: abilash-app
+spec:
+  selector:
+    run: abilash  # Label selector that matches the labels on your Nginx pods
+  ports:
+    - protocol: TCP
+      port: 80      # Port on the Service that will be exposed externally
+      targetPort: 8000 # Port on the pods that the Service will route traffic to
+  type: LoadBalancer 
